@@ -2,6 +2,7 @@ package com.example.ryan.geoquiz;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +20,7 @@ public class CheatActivity extends Activity {
     private boolean mAnswerIsTrue;
     private TextView mAnswerTextView;
     private Button showAnswer;
+    private TextView mAndroidVersionTextView;
     private void setAnswerShownResult(boolean isAnswerShown) {
         Intent data = new Intent();
         data.putExtra(EXTRA_ANSWER_SHOWN, isAnswerShown);
@@ -28,6 +30,8 @@ public class CheatActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cheat_activity);
         setAnswerShownResult(false);
+        mAndroidVersionTextView = (TextView) findViewById(R.id.android_version);
+        mAndroidVersionTextView.setText("API level:" + Build.VERSION.SDK_INT);
         mAnswerIsTrue = getIntent().getBooleanExtra(EXTRA_ANSWER_IS_TRUE, false);
         showAnswer = (Button) findViewById(R.id.showAnswerButton);
         mAnswerTextView = (TextView) findViewById(R.id.answerTextView);
