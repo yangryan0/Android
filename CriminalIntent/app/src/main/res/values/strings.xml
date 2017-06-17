@@ -5,4 +5,7 @@
     <string name="crime_details">Details</string>
     <string name="crime_solved">Solved?</string>
     <string name="crimes_title">Crimes</string>
+    <string name="date_picker_title">Date of Crime</string>
+    <string name="pick_edit">Pick an option to edit</string>
+    <string name="time_picker_title">Time of Crime</string>
 </resources>
